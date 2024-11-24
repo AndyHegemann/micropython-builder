@@ -1,13 +1,6 @@
 name: Build binaries
 
-on:
-  schedule:
-    - cron: "0 3 */2 * *"
-  push:
-  pull_request:
-    paths:
-    - '.github/workflows/*.yml'
-    - './scripts/*.sh'
+on: [workflow_dispatch]
 
 jobs:
   build:
