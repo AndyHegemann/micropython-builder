@@ -29,6 +29,7 @@ jobs:
 
       - name: Compile for ESP32 S3
         if: always()
+        run: ./scripts/esp32/generic-s3.sh
         
       - name: Merge Artifacts
         uses: actions/upload-artifact/merge@v4
