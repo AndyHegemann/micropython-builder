@@ -29,3 +29,12 @@ jobs:
 
       - name: Compile for ESP32 S3
         if: always()
+        
+      - name: Merge Artifacts
+        uses: actions/upload-artifact/merge@v4
+        with:
+          name: ${{ inputs.archive_name }}
+          pattern: artifact-*
+          delete-merged: true
+
+          files: ./artifacts/*
